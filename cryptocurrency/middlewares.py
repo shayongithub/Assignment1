@@ -117,7 +117,7 @@ class CryptocurrencyMiddleware(object):
             # Crawl from 3 years ago start from Nov 17 2017 to now
             #Set start date
             start_element = WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located((By.XPATH, '//div[@class = "bp3-control-group"]/div[1]/input'))
+                EC.presence_of_element_located((By.XPATH, '//*[@id="__next"]/div[1]/div[2]/div[1]/div[2]/div[3]/div/ul[2]/li[5]/div/div/div[1]/div/div/span/span/div/div[1]/input'))
             )
 
             start_element.send_keys(Keys.BACKSPACE * 12)
@@ -127,12 +127,12 @@ class CryptocurrencyMiddleware(object):
 
             # Set end date
             end_element = WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located((By.XPATH, '//div[@class = "bp3-control-group"]/div[2]/input'))
+                EC.presence_of_element_located((By.XPATH, '//*[@id="__next"]/div[1]/div[2]/div[1]/div[2]/div[3]/div/ul[2]/li[5]/div/div/div[1]/div/div/span/span/div/div[2]/input'))
             )
 
             end_element.send_keys(Keys.BACKSPACE * 12)
-            end_element.send_keys("Oct 17, 2020")
-            end_element.send_keys(Keys.RETURN)
+            end_element.send_keys("Oct 18, 2020")
+            # end_element.send_keys(Keys.RETURN)
 
             time.sleep(5)
             #driver.refresh()
